@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Dash.js Rocks</title>
+    <style>
+        video {
+            width: 640px;
+            height: 360px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <video id="videoPlayer" controls></video>
+    </div>
+    <script src="dash.all.debug.js"></script>
+    <script>
+        (function () {
+            var protData = {
+                "com.widevine.alpha": {
+                    "serverURL": 'http://localhost:3001/'//"http://192.168.3.52:9000/",
+                }
+            };
+            var url = "http://localhost:3001/public/assets/stream.mpd";
+            // var url = "http://192.168.3.52:8080/multidrm/manifest.mpd";
+            // var url = "http://192.168.3.52:8080/output/playlist.mpd";
+            var player = dashjs.MediaPlayer().create();
+            player.initialize(document.querySelector("#videoPlayer"), url, true);
+            player.setProtectionData(protData);
+        })();
+    </script>
+</body>
+
+</html>
