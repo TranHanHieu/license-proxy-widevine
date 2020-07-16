@@ -118,7 +118,6 @@ function encryptAES_256(text_to_sign) {
     .update(text_to_sign)
     .digest();
   const padding = getPadding(hashed_text);
-  console.log(_KEY.toString("utf16le"));
 
   const cipher = crypto.createCipheriv("aes-256-cbc", _KEY, _IV);
   cipher.setAutoPadding(false);
