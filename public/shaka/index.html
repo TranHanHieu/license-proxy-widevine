@@ -28,7 +28,7 @@
         var $videoPlayer = $("#videoPlayer");
         var $videoPlayerPanel = $("#videoPlayerPanel");
 
-        playVideo("https://dashboard.heroku.com/public/assets/stream.mpd");  
+        playVideo("https://license-proxy.herokuapp.com/public/assets/stream.mpd");  
             
         // Called when the user clicks on the link to play a video.
         function playVideo(video) {
@@ -53,7 +53,7 @@
             player.configure({
               drm: {
                 servers: {
-                  "com.widevine.alpha": "https://dashboard.heroku.com/"
+                  "com.widevine.alpha": "https://license-proxy.herokuapp.com/"
                 }
               }
             });
