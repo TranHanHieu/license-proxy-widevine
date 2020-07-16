@@ -257,7 +257,7 @@ app.get("/", function(req, res) {
   res.send("GET Not Supported");
 });
 
-server.listen(app.get("port"), function() {
+server.listen(process.env.PORT || 3001, function() {
   console.log(
     `${moment().format(
       "YYYY/MM/DD hh:mm:ss"
