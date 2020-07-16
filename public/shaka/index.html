@@ -28,7 +28,7 @@
         var $videoPlayer = $("#videoPlayer");
         var $videoPlayerPanel = $("#videoPlayerPanel");
 
-        playVideo("http://localhost:3001/public/assets/stream.mpd");  
+        playVideo("https://dashboard.heroku.com/public/assets/stream.mpd");  
             
         // Called when the user clicks on the link to play a video.
         function playVideo(video) {
@@ -53,13 +53,16 @@
             player.configure({
               drm: {
                 servers: {
-                  "com.widevine.alpha": "http://localhost:3001/"
-                },
-                httpRequestHeaders: {
-                  "Content-Type": 'application/octet-stream'
+                  "com.widevine.alpha": "https://dashboard.heroku.com/"
                 }
               }
             });
+            player.getNetworkingEngine().registerRequestFilter(function(type, request) {
+                if (type == shaka.net.NetworkingEngine.RequestType.LICENSE) {
+                    request.headers['Content-Type'] = 'application/octet-stream'
+                }
+            });
+
 
             // Try to load a manifest. This is an asynchronous process.
             player
