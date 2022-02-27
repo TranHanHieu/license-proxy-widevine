@@ -19,7 +19,7 @@
     "moment": "^2.26.0",
     "nodemon": "^2.0.4",
     "object-sizeof": "^1.6.1",
-    "url-parse": "^1.4.7",
+    "url-parse": "^1.5.8",
     "urllib": "^2.36.1"
   }
 }
