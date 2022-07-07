@@ -16,7 +16,7 @@
     "express": "^4.17.1",
     "http": "^0.0.1-security",
     "js-base64": "^2.6.2",
-    "moment": "^2.26.0",
+    "moment": "^2.29.4",
     "nodemon": "^2.0.4",
     "object-sizeof": "^1.6.1",
     "url-parse": "^1.4.7",
